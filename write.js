@@ -10,13 +10,11 @@ const monogUrl = 'mongodb://localhost:27017';
     const mydb = client.db('mydatabase')
     console.log(mydb)
     const tasks = mydb.collection('tasks')
-    /* const result = await tasks.insertMany([
-        {name: 'first Name', priority: 1},
-        {name: 'second Name', priority: 2},
-        {name: 'third Name', priority: 4},
-        {name: 'fourth Name', priority: 3}
-    ]) */
-    //console.log(result)
-    const taskItems = await tasks.find({}).toArray()
-    console.log(taskItems)
+     const result = await tasks.insertMany([
+        {name: 'some Name'},
+        {name: 'some other Name'},
+        {name: 'another Name'},
+        {name: 'some another Name'}
+    ]) 
+    console.log(result)
 })()
